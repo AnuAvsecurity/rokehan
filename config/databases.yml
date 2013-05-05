@@ -1,0 +1,9 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:dbname=symfonycms;host=localhost;port=80'
+      username: root
+      encoding: utf8
+      attributes: { 164: true }
+      password: '123456'
