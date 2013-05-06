@@ -616,7 +616,7 @@ pre {
 }
 
 #localNav ul.community {
-    background: transparent url(../images/bg_localnav_community.gif) repeat-y 0 0;
+    /*background: transparent url(../images/bg_localnav_community.gif) repeat-y 0 0;*/
 }
 
 #localNav li {
@@ -1813,7 +1813,7 @@ span.op_color {
     float: left;
     padding: 8px 20px 12px;
     margin-left: -20px;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 200;
     line-height: 1;
     color: white;
@@ -1839,10 +1839,32 @@ color:#fff;
 }
 
 .thumbnail > img {
-width: 220px;
-height: 165px;
+    width: 220px;
+    height: 165px;
 }
 #Center .button {
     background: none !important;
 }
 
+#communityList_4 .sidewell2 .moreInfo a,
+#communityList_11 .sidewell2 .moreInfo a
+
+{
+    display: block;
+    background: url(../images/icon_arrow_1.gif) no-repeat;
+    background-position: 65px 4px;
+    text-align: center;
+}
+
+.member_icon_arrow{
+    text-align: center;
+    background: url(../images/icon_arrow_1.gif) no-repeat;
+    background-position: 30px 4px;
+}
+
+.friend_icon_arrow {
+    background: url(../images/icon_arrow_1.gif) no-repeat;
+    background-position: 30px 4px;
+    padding-left:50px;
+
+}

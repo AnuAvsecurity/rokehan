@@ -13,11 +13,11 @@ $options = array(
   'crownIds' => array($communityAdmin->getId()),
   'link_to' => '@member_profile?id=',
   'use_op_link_to_member' => true,
-  'moreInfo' => array(link_to(sprintf('%s(%d)', __(' &raquo Show all'), $community->countCommunityMembers()), '@community_memberList?id='.$community->getId())),
+  'moreInfo' => array('<div class="friend_icon_arrow">'.link_to(sprintf('%s(%d)', __('Show all'), $community->countCommunityMembers()), '@community_memberList?id='.$community->getId()).'</div>'),
 );
 if ($isAdmin || $isSubAdmin)
 {
-  $options['moreInfo'][] = link_to(__('Management member'), '@community_memberManage?id='.$community->getId());
+  $options['moreInfo'][] = '<div class="member_icon_arrow">'.link_to(__('Management member'), '@community_memberManage?id='.$community->getId()).'</div>';
 }
 op_include_parts('nineTable', 'frendList', $options);
 ?>

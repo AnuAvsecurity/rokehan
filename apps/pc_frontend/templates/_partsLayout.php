@@ -33,7 +33,7 @@ if (!empty($options['class'])) $class .= ' '.$options['class'];
 <?php if (isset($options['moreInfo'])): ?>
 
     <div class="sidewell2" style="margin-top:0px;">
-        <div style="text-align: center;">
+        <div class="moreInfo" style="text-align: center;">
 <?php foreach ($options['moreInfo'] as $key => $value): ?>
 <?php echo $options['moreInfo']->getRaw($key) ?>
 <?php endforeach; ?>
