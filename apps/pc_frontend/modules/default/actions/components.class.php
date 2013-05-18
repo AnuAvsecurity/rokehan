@@ -39,6 +39,13 @@ class defaultComponents extends sfComponents
     }
   }
 
+ public function executeLeftSidebar(){
+
+ }
+ public function executeHomepagememberInfo(){
+
+ }
+
   public function executeSmtMenu()
   {
     $type = opToolkit::isSecurePage() ? 'smartphone_default' : 'smartphone_insecure';

@@ -22,6 +22,11 @@ class memberComponents extends opMemberComponents
     }
   }
 
+    public function executeProfilenavi($request)
+  {
+
+  }
+
   public function executeSmtProfileListBox($request)
   {
     if ($request->hasParameter('id'))
