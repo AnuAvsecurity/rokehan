@@ -23,87 +23,41 @@
     <?php if (Doctrine::getTable('SnsConfig')->get('customizing_css')): ?>
     <link rel="stylesheet" type="text/css" href="<?php echo url_for('@customizing_css') ?>"/>
     <?php endif; ?>
-    <?php if (opConfig::get('enable_jsonapi') && opToolkit::isSecurePage()): ?>
-    <?php
+   <?php
     use_helper('Javascript');
     use_javascript('custom/prototype.js');
     use_javascript('custom/ajaxzip2.js');
     use_javascript('jquery.min.js');
-    use_javascript('custom/copy.js');
+    use_javascript('custom/mopTip/mopTip-2.2.js');
     use_javascript('custom/jquery.pngFix-1.2.js');
-
-
-    $jsonData = array(
-        'apiKey' => $sf_user->getMemberApiKey(),
-        'apiBase' => app_url_for('api', 'homepage'),
-    );
-
-    $json = defined('JSON_PRETTY_PRINT') ? json_encode($jsonData, JSON_PRETTY_PRINT) : json_encode($jsonData);
-
-    echo javascript_tag(
-        '
-var openpne = ' . $json . ';
-'
-    );
+    use_javascript('custom/copy.js');
     ?>
-    <?php endif ?>
     <?php include_javascripts() ?>
     <?php //echo $op_config->get('pc_html_head') ?>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#demo1Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo1"});
-            $("#demo2Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo2"});
-            $("#demo3Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo3"});
-            $("#demo4Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo4"});
-            $("#demo5Btn").mopTip({'w':180, 'style':"overOut", 'get':"#demo5"});
-            $("#demo6Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo6"});
-            $("#demo7Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo7"});
-            $("#demo8Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo8"});
-            $("#demo9Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo9"});
-            $("#demo10Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo10"});
-            $("#demo11Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo11"});
-            $("#demo12Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo12"});
-            $("#demo13Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo13"});
-            $("#demo14Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo14"});
-            $("#demo15Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo15"});
-            $("#demo16Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo16"});
-            $("#demo17Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo17"});
-            $("#demo18Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo18"});
-            $("#demo19Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo19"});
+        jQuery(document).ready(function () {
+            jQuery("#demo1Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo1"});
+            jQuery("#demo2Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo2"});
+            jQuery("#demo3Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo3"});
+            jQuery("#demo4Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo4"});
+            jQuery("#demo5Btn").mopTip({'w':180, 'style':"overOut", 'get':"#demo5"});
+            jQuery("#demo6Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo6"});
+            jQuery("#demo7Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo7"});
+            jQuery("#demo8Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo8"});
+            jQuery("#demo9Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo9"});
+            jQuery("#demo10Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo10"});
+            jQuery("#demo11Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo11"});
+            jQuery("#demo12Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo12"});
+            jQuery("#demo13Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo13"});
+            jQuery("#demo14Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo14"});
+            jQuery("#demo15Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo15"});
+            jQuery("#demo16Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo16"});
+            jQuery("#demo17Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo17"});
+            jQuery("#demo18Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo18"});
+            jQuery("#demo19Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo19"});
         });
     </script>
-    <script type="text/javascript">
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-29160238-4']);
-        _gaq.push(['_trackPageview']);
-
-        (function () {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-
-    </script>
-    <script type="text/javascript"><!--
-    function cText(obj) {
-        if (obj.value == obj.defaultValue) {
-            obj.value = "";
-            obj.style.color = "#000";
-        }
-    }
-
-    function sText(obj) {
-        if (obj.value == "") {
-            obj.value = obj.defaultValue;
-            obj.style.color = "#999";
-        }
-    }
-    //-->
-    </script>
 </head>
 
 <div class="gray">
