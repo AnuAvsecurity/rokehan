@@ -3,8 +3,6 @@
 <head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php //include_title() ?>
-    
     <?php include_stylesheets();?>
     <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
@@ -23,7 +21,7 @@
     <?php if (Doctrine::getTable('SnsConfig')->get('customizing_css')): ?>
     <link rel="stylesheet" type="text/css" href="<?php echo url_for('@customizing_css') ?>"/>
     <?php endif; ?>
-   <?php
+    <?php
     use_helper('Javascript');
     use_javascript('custom/prototype.js');
     use_javascript('custom/ajaxzip2.js');
@@ -31,117 +29,105 @@
     use_javascript('custom/mopTip/mopTip-2.2.js');
     use_javascript('custom/jquery.pngFix-1.2.js');
     use_javascript('custom/copy.js');
+    use_javascript('custom/custom.js');
+    include_javascripts();
     ?>
-    <?php include_javascripts() ?>
-    <?php //echo $op_config->get('pc_html_head') ?>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery("#demo1Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo1"});
-            jQuery("#demo2Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo2"});
-            jQuery("#demo3Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo3"});
-            jQuery("#demo4Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo4"});
-            jQuery("#demo5Btn").mopTip({'w':180, 'style':"overOut", 'get':"#demo5"});
-            jQuery("#demo6Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo6"});
-            jQuery("#demo7Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo7"});
-            jQuery("#demo8Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo8"});
-            jQuery("#demo9Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo9"});
-            jQuery("#demo10Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo10"});
-            jQuery("#demo11Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo11"});
-            jQuery("#demo12Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo12"});
-            jQuery("#demo13Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo13"});
-            jQuery("#demo14Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo14"});
-            jQuery("#demo15Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo15"});
-            jQuery("#demo16Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo16"});
-            jQuery("#demo17Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo17"});
-            jQuery("#demo18Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo18"});
-            jQuery("#demo19Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo19"});
-        });
-    </script>
-
 </head>
-
-<div class="gray">
-<div class="fotter_bg">
+<?php  $server_info = explode('/', $_SERVER["REQUEST_URI"]);?>
+<?php if ($_SESSION['symfony/user/sfUser/authenticated'] == false): ?>
 <div class="head_bg">
-<div class="container">
-<?php  include_partial('global/header');?>
-<?php  $server_info = explode('/',$_SERVER["REQUEST_URI"]);?>
-<?php if (has_slot('op_top')): ?>
-<div id="Top">
+    <div class="container">
+        <?php  include_partial('global/header');?>
+        <!--head-->
+    </div>
+</div>
 
-    <?php if(!in_array('profile',$server_info)){ include_slot('op_top'); }?>
+<br class="both"/>
+<div id="Top">
+    <?php include_slot('op_top');?>
 </div><!-- Top -->
     <?php endif; ?>
-<!--head-->
-<br class="both"/>
 
-<div class="top_pankuzu_box">
-    <ul class="pan">
-        <li><a href="http://test.s-share.net/">スペースシェア TOP</a><span class="pan_space">&gt;</span></li>
-        <li>マイページ <!--&gt;--></li>
-        <!--<li>パンくずリストの作り方</li>-->
-    </ul>
-    <div class="login_small">
-        <p class="login_link"><a href="logout">ログアウト</a></p>
+<?php if ($_SESSION['symfony/user/sfUser/authenticated'] == true): ?>
+<div class="gray">
+<div class="fotter_bg">
+    <div class="head_bg">
+        <div class="container">
+            <?php  include_partial('global/header');?>
+            <!--head-->
+            <br class="both"/>
+            <div class="top_pankuzu_box">
+                <ul class="pan">
+                    <li><a href="http://test.s-share.net/">スペースシェア TOP</a><span class="pan_space">&gt;</span></li>
+                    <li>マイページ <!--&gt;--></li>
+                    <!--<li>パンくずリストの作り方</li>-->
+                </ul>
+                <div class="login_small">
+                    <p class="login_link"><a href="logout">ログアウト</a></p>
+                </div>
+                <p class="name"><span class="pl10">ようこそ<a href="mypage.html">○○○○</a>さん</span></p>
+            </div>
+            <!--top_pankuzu_box-->
+            <br class="both"/>
+            <?php if (in_array('profile', $server_info)||in_array('messages', $server_info)):
+                      echo include_component('member', 'profilenavi');
+                  endif;
+            ?>
+            <h3 class="h3 mt20"><span class="h3_text"><span class="h3big">マイページ</span></span></h3>
+
+            <div class="top_roll">
+                <?php echo include_component('default', 'localNav');?>
+                <br class="both"/>
+                <div class="massage_box">
+                    <p>こんにちは〇〇○さん。<br/>
+                        まずはプロフィールを登録頂き、その後、物件を掲載する場合は、レンダー（貸し手）ページから物件掲載をお願いいたします。</p>
+                </div>
+                <!--massage_box-->
+
+                    <!--face_bg-->
+                    <?php if (has_slot('op_sidemenu') && !in_array('messages', $server_info)): ?>
+                    <?php echo include_component('default', 'leftSidebar'); ?>
+                    <?php //include_slot('op_sidemenu') ?>
+                    <!-- Left -->
+                    <?php endif; ?>
+                    <?php  echo $sf_content ?>
+                    <?php
+                    if (in_array('profile', $server_info)):
+                        echo include_component('member', 'profileListBox');
+                    endif;
+
+                    if ($server_info[3] == ''):
+                        echo include_component('default', 'homepagememberInfo');
+                    endif;
+                    ?>
+                </div>
+                <!--top_roll-->
+                    <p><img src="/rokehan/web/assets/images/top_bottom.jpg" width="980" height="20"/></p>
+                    <?php include_partial('global/footer') ?>
+
+                </div>
+
+            <!--container-->
+
+        </div>
+        <!--head_bg-->
     </div>
-    <p class="name"><span class="pl10">ようこそ<a href="mypage.html">○○○○</a>さん</span></p>
+    <!--fotter_bg-->
 </div>
-<!--top_pankuzu_box-->
-<br class="both"/>
-<?php if(in_array('profile',$server_info)){ echo include_component('member', 'profilenavi');}?>
-<h3 class="h3 mt20"><span class="h3_text"><span class="h3big">マイページ</span></span></h3>
-
-<div class="top_roll">
-<?php echo include_component('default', 'localNav');?>
-<br class="both"/>
-
-<div class="massage_box">
-    <p>こんにちは〇〇○さん。<br/>
-        まずはプロフィールを登録頂き、その後、物件を掲載する場合は、レンダー（貸し手）ページから物件掲載をお願いいたします。</p>
-</div>
-<!--massage_box--
-
-            <!--massage_box-->
-<div class="side">
-
-    <!--face_bg-->
-<?php if (has_slot('op_sidemenu')): ?>
-    <?php echo include_component('default', 'leftSidebar');?>
-    <?php //include_slot('op_sidemenu') ?>
-<!-- Left -->
-<?php endif; ?>
-
- <?php
-    if(in_array('profile',$server_info)){
-     echo include_component('member', 'profileListBox');
-    }else{
-     echo include_component('default', 'homepagememberInfo');
-    }
-
-   ?>
-</div>
-<!--top_roll-->
-<p><img src="/rokehan/web/assets/images/top_bottom.jpg" width="980" height="20"/></p>
-<?php include_partial('global/footer') ?>
-</div>
-<!--container-->
-</div>
-<!--head_bg-->
-</div>
-<!--fotter_bg-->
-</div>
-<!--gray-->
-<div class="fotter_bottom">
-    <div class="fotter_bottom_in">
-        <p class="fotter_logo"><a href="http://test.s-share.net/"><img src="/rokehan/web/assets/images/fotter_logo.jpg" width="278"
-                                                                       height="43" alt="SPACE SHARE"/></a></p>
-        <address>
-            Copyright©2012 SPACE SHARE All rights reserved.
-        </address>
+    <!--gray-->
+    <?php endif; ?>
+    <div class="fotter_bottom">
+        <div class="fotter_bottom_in">
+            <p class="fotter_logo"><a href="http://test.s-share.net/"><img
+                    src="/rokehan/web/assets/images/fotter_logo.jpg" width="278"
+                    height="43" alt="SPACE SHARE"/></a></p>
+            <address>
+                Copyright©2012 SPACE SHARE All rights reserved.
+            </address>
+        </div>
+        <!--fotter_bottm-->
     </div>
-    <!--fotter_bottm-->
-</div>
-<!--fotter_bottom_in-->
+    <!--fotter_bottom_in-->
 
-</body>
+    </body>
 </html>

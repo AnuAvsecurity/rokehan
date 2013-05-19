@@ -22,7 +22,7 @@ class defaultComponents extends sfComponents
   public function executeLocalNav()
   {
     if (!opToolkit::isSecurePage()) {
-      return sfView::NONE;
+     // return sfView::NONE;
     }
 
     $context = sfContext::getInstance();

@@ -43,11 +43,30 @@
 
 </div>
   -->
-     <?php  $host = $_SERVER["HTTP_HOST"]; ?>
-     <ul class="mypage_navi">
-          <li><a href="#"><img src="/rokehan/web/assets/images/control/control_navi1.gif" width="189" height="45" alt="マイページTOP" /></a></li>
-          <li><a href=" /rokehan/web/member/profile"><img src="/rokehan/web/assets/images/control/control_navi2_bg.gif" width="187" height="45" alt="プロフィール" /></a></li>
-          <li><a href=""><img src="/rokehan/web/assets/images/control/control_navi3_bg.gif" width="187" height="45" alt="メッセージ" /></a></li>
+    <?php  $server_info = explode('/', $_SERVER["REQUEST_URI"]);?>
+    <?php
+
+      if (in_array('profile', $server_info)):
+          $img_1 = '<img src="/rokehan/web/assets/images/control/control_navi2.gif" width="187" height="45" alt="プロフィール" />';
+      else:
+          $img_1 = '<img src="/rokehan/web/assets/images/control/control_navi2_bg.gif" width="187" height="45" alt="プロフィール" />';
+      endif;
+      if(in_array('messages', $server_info)):
+            $img_2 = '<img src="/rokehan/web/assets/images/control/control_navi3.gif" width="187" height="45" alt="メッセージ" />';
+      else:
+          $img_2 = '<img src="/rokehan/web/assets/images/control/control_navi3_bg.gif" width="187" height="45" alt="メッセージ" />';
+      endif;
+      if($server_info[3]== ''):
+          $img_3 = ' <img src="/rokehan/web/assets/images/control/control_navi1.gif" width="187" height="45" alt="プロフィール" />';
+      else:
+          $img_3 = '<img src="/rokehan/web/assets/images/control/control_navi1_bg.gif" width="187" height="45" alt="プロフィール" />';
+      endif;
+     ?>
+
+   <ul class="mypage_navi">
+          <li><a href="/rokehan/web/"><?php echo $img_3; ?></a></li>
+          <li><a href=" /rokehan/web/member/profile"><?php echo $img_1; ?></a></li>
+          <li><a href=" /rokehan/web/messages"><?php echo $img_2; ?></a></li>
           <li><a href=""><img src="/rokehan/web/assets/images/control/control_navi4_bg.gif" width="187" height="45" alt="レンダー（貸し手）ページ" /></a></li>
           <li><a href=""><img src="/rokehan/web/assets/images/control/control_navi5_bg.gif" width="189" height="45" alt="ボロワー貸し手ページ" /></a></li>
         </ul>

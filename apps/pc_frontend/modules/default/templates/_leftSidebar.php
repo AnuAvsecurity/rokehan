@@ -1,3 +1,4 @@
+<div class="side">
 <div class="face_bg">
         <p class="face"><img src="/rokehan/web/assets/images/control/face/face_noimage.jpg" width="224" height="213" alt="NOIMAGE"/>
         </p>

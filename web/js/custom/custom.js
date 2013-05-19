@@ -1,0 +1,21 @@
+jQuery(document).ready(function () {
+            jQuery("#demo1Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo1"});
+            jQuery("#demo2Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo2"});
+            jQuery("#demo3Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo3"});
+            jQuery("#demo4Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo4"});
+            jQuery("#demo5Btn").mopTip({'w':180, 'style':"overOut", 'get':"#demo5"});
+            jQuery("#demo6Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo6"});
+            jQuery("#demo7Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo7"});
+            jQuery("#demo8Btn").mopTip({'w':210, 'style':"overOut", 'get':"#demo8"});
+            jQuery("#demo9Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo9"});
+            jQuery("#demo10Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo10"});
+            jQuery("#demo11Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo11"});
+            jQuery("#demo12Btn").mopTip({'w':150, 'style':"overOut", 'get':"#demo12"});
+            jQuery("#demo13Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo13"});
+            jQuery("#demo14Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo14"});
+            jQuery("#demo15Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo15"});
+            jQuery("#demo16Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo16"});
+            jQuery("#demo17Btn").mopTip({'w':200, 'style':"overOut", 'get':"#demo17"});
+            jQuery("#demo18Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo18"});
+            jQuery("#demo19Btn").mopTip({'w':230, 'style':"overOut", 'get':"#demo19"});
+        });
