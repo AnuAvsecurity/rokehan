@@ -64,7 +64,7 @@
             <tr>
                 <td width="38"><img src="/rokehan/web/assets/images/control/mail_icon.jpg" width="36" height="23" alt="メール"/></td>
                 <td>未読メッセージ件数</td>
-                <td class="mail_count"><a href="message/index.html">0件</a></td>
+                <td class="mail_count"><a href="/rokehan/web/messages">0件</a></td>
             </tr>
         </table>
     </div>
@@ -83,8 +83,8 @@
 
     <div class="side_box">
         <ul class="side_btn1">
-            <li><a href="index.html">プロフィール画面</a></li>
-            <li><a href="message/index.html">メッセージ</a></li>
+            <li><a href="/rokehan/web/member/profile">プロフィール画面</a></li>
+            <li><a href="/rokehan/web/messages">メッセージ</a></li>
             <li><a href="property_lender/entry/index.html">スペース掲載</a></li>
             <li><a href="property_lender/index.html">レンダー（貸し手）用画面</a></li>
             <li><a href="property_borrower/index.html">ボロワー（借り手）用画面</a></li>
@@ -94,7 +94,7 @@
 
     <div class="side_box">
         <ul class="side_btn2">
-            <li><a href="#">プロフィール編集</a></li>
+            <li><a href="/rokehan/web/member/profile">プロフィール編集</a></li>
             <li><a href="#">退会</a></li>
         </ul>
     </div>

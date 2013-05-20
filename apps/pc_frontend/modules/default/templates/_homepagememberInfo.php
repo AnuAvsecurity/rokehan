@@ -5,7 +5,7 @@
 
         <div class="mypage_box">
             <dl class="pt5">
-                <dt class="aicon"><a href="index.html">プロフィール編集・確認</a></dt>
+                <dt class="aicon"><a href="/rokehan/web/member/profile">プロフィール編集・確認</a></dt>
                 <dd class="aicon_text pl50">→プロフィール編集・確認できます。</dd>
             </dl>
             <dl class="pt5 pb5">
@@ -49,7 +49,7 @@
 
         <div class="mypage_box">
             <dl class="pt5">
-                <dt class="aicon"><a href="message/index.html">メッセージ一覧</a></dt>
+                <dt class="aicon"><a href="/rokehan/web/messages">メッセージ一覧</a></dt>
                 <dd class="aicon_text pl50">→メッセージの一覧です。</dd>
             </dl>
             <dl class="pt5 pb5">
